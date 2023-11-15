@@ -1,11 +1,9 @@
 # Recursion
 
-"""
-Summing a List of numbers
-"""
-
 
 def sum_list(x):
+    """
+    Summing a List of numbers"""
     # base case is if the list doesn't exist => return 0
     if not x:
         return 0
@@ -14,12 +12,9 @@ def sum_list(x):
         return x[0] + sum_list(x[1:])
 
 
-"""
-Summing a nested list of numbers
-"""
-
-
 def sum_nested_list(x):
+    """
+    Summing a nested list of numbers"""
     # base case is if the list doesn't exist => return 0
     if not x:
         return 0
@@ -31,12 +26,10 @@ def sum_nested_list(x):
         return x[0] + sum_nested_list(x[1:])
 
 
-"""
-Cleaning zeroes from ends of a list without loops
-"""
-
-
 def cleaned(l):
+    """
+    Cleaning zeroes from ends of a list without loops
+    """
     # if the list is empty
     if not l:
         return []
@@ -50,27 +43,34 @@ def cleaned(l):
     return l[:]
 
 
-"""
-Generator all elements from tree
-"""
-
-
-def elts(tree):
+def elements(tree):
+    """
+    Generator for all elements from tree"""
     yield tree[0]
     for child in tree[1:]:
-        yield from elts(child)
+        yield from elements(child)
+
+
+def swap_pairs(inp):
+    """
+    Swap adjacent pairs"""
+    # base case => return the unmodified list if it's length 0 or 1
+    if len(inp) < 2:
+        return inp[:]
+    else:
+        # returns the first pair reversed, perform recursion on rest
+        return [inp[1], inp[0]] + swap_pairs(inp[2:])
 
 
 if __name__ == "__main__":
     list_nums = [1, 2, 3, 4, 5]
-    nested_list_nums = [[1, 2], [3, [4, 5]], [[[[[6]]]]]]
-    dirty_list = [0, 0, 0, 1, 2, 3, 4, 5, 0, 0, 0, 0]
-    tree = [13, [7], [8, [99], [16, [77]], [42]]]
     # print(sum_list(list_nums))
+    nested_list_nums = [[1, 2], [3, [4, 5]], [[[[[6]]]]]]
     # print(sum_nested_list(nested_list_nums))
+    dirty_list = [0, 0, 0, 1, 2, 3, 4, 5, 0, 0, 0, 0]
     # print(cleaned(dirty_list))
-    # for elem in elts(tree):
+    tree = [13, [7], [8, [99], [16, [77]], [42]]]
+    # for elem in elements(tree):
     #     print(elem)
-    # agenda = 13
-    
-
+    pairs = [1, 2, 3, 4]
+    print(swap_pairs(pairs))
