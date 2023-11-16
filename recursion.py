@@ -63,14 +63,16 @@ def swap_pairs(inp):
 
 
 if __name__ == "__main__":
-    list_nums = [1, 2, 3, 4, 5]
+    # list_nums = [1, 2, 3, 4, 5]
     # print(sum_list(list_nums))
-    nested_list_nums = [[1, 2], [3, [4, 5]], [[[[[6]]]]]]
+    # nested_list_nums = [[1, 2], [3, [4, 5]], [[[[[6]]]]]]
     # print(sum_nested_list(nested_list_nums))
-    dirty_list = [0, 0, 0, 1, 2, 3, 4, 5, 0, 0, 0, 0]
+    # dirty_list = [0, 0, 0, 1, 2, 3, 4, 5, 0, 0, 0, 0]
     # print(cleaned(dirty_list))
-    tree = [13, [7], [8, [99], [16, [77]], [42]]]
+    # tree = [13, [7], [8, [99], [16, [77]], [42]]]
     # for elem in elements(tree):
     #     print(elem)
-    pairs = [1, 2, 3, 4]
-    print(swap_pairs(pairs))
+    # pairs = [1, 2, 3, 4]
+    # print(swap_pairs(pairs))
+    test = [1, 2]
+    print(test[0:1] + [3])
